@@ -5,6 +5,8 @@ import { siteConfig } from "@/lib/constants";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 
+import { SpeedInsights } from "@vercel/speed-insights/next";
+
 import { SmoothScroll } from "@/components/ui/SmoothScroll";
 import "./globals.css";
 
@@ -47,10 +49,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html
-      lang="en"
-      className={`${sora.variable} ${inter.variable} dark`}
-    >
+    <html lang="en" className={`${sora.variable} ${inter.variable} dark`}>
       <head>
         <script
           dangerouslySetInnerHTML={{
@@ -74,6 +73,8 @@ export default function RootLayout({
           </main>
           <Footer />
         </ThemeProvider>
+
+        <SpeedInsights />
       </body>
     </html>
   );
