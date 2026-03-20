@@ -1,0 +1,30 @@
+export const metadata = {
+  title: "Vitrine",
+  description: "A modern, open-source portfolio built with Next.js 16, Three.js, and Framer Motion.",
+  tags: ["Next.js", "Three.js", "Tailwind CSS", "MDX"],
+  liveUrl: "https://elieyammine.com",
+  repoUrl: "https://github.com/elieyammine/vitrine",
+  featured: true,
+};
+
+# Vitrine
+
+An open-source portfolio site built to showcase my work and share thoughts on building for the web.
+
+## The Stack
+
+- **Next.js 16** with the App Router and Turbopack
+- **Tailwind CSS v4** with a custom design token system
+- **Three.js** via React Three Fiber for the interactive hero
+- **Framer Motion** for scroll-driven animations
+- **MDX** for content authoring
+
+## Design Decisions
+
+The site uses a dual theme system with class-based switching and localStorage persistence. An inline script in the `<head>` prevents flash of wrong theme on load.
+
+The Three.js scene is lazy-loaded with `next/dynamic` and `ssr: false` to keep the initial bundle lean. Users who prefer reduced motion get a static gradient instead.
+
+## Performance
+
+Lighthouse scores consistently above 95 across all categories. The MDX content is statically generated at build time, and the Three.js canvas only loads on the client when the hero section is visible.

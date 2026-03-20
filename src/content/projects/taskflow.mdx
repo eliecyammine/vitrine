@@ -1,0 +1,27 @@
+export const metadata = {
+  title: "TaskFlow",
+  description: "A collaborative project management tool with real-time updates, Kanban boards, and team analytics.",
+  tags: ["React", "Node.js", "PostgreSQL", "WebSockets"],
+  featured: true,
+};
+
+# TaskFlow
+
+A real-time project management application designed for small to mid-size teams who want Kanban-style workflow without the bloat.
+
+## Features
+
+- **Real-time collaboration** via WebSocket connections — see teammate cursors and card movements live
+- **Kanban boards** with drag-and-drop, swimlanes, and custom columns
+- **Team analytics** showing velocity, cycle time, and workload distribution
+- **Markdown-based** card descriptions with rich previews
+
+## Technical Highlights
+
+The backend runs on Node.js with PostgreSQL, using a pub/sub pattern for real-time events. The frontend is a React SPA with optimistic updates for snappy interactions.
+
+Authentication uses JWT tokens with refresh rotation, and the API follows RESTful conventions with consistent error handling.
+
+## Lessons Learned
+
+Building real-time features is harder than it looks — conflict resolution, reconnection logic, and state synchronization all need careful thought. But the result is a dramatically better user experience.

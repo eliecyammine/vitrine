@@ -1,0 +1,42 @@
+export const metadata = {
+  title: "Building with Next.js 16: What's New",
+  description: "A deep dive into Next.js 16's new features — async params, Turbopack by default, and the future of React Server Components.",
+  date: "2026-03-15",
+  tags: ["Next.js", "React"],
+  readingTime: "5 min read",
+};
+
+# Building with Next.js 16: What's New
+
+Next.js 16 shipped with some significant changes that affect how we build applications. Here's a rundown of the most impactful ones.
+
+## Async Params
+
+One of the biggest breaking changes: `params` is now a Promise. Every dynamic route needs to `await params` before using it.
+
+```tsx
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ slug: string }>
+}) {
+  const { slug } = await params;
+  return <h1>{slug}</h1>;
+}
+```
+
+This aligns with the broader move toward async server components and streaming.
+
+## Turbopack by Default
+
+Turbopack is now the default bundler for development. It's significantly faster than webpack for large projects, and the team has been steadily closing the compatibility gap.
+
+If you had custom webpack configs, you'll need to migrate or opt back in — but for most projects, it just works.
+
+## React Compiler
+
+The React Compiler is now stable and enabled by default. It automatically memoizes components and hooks, eliminating the need for `useMemo`, `useCallback`, and `React.memo` in most cases.
+
+## What This Means for Developers
+
+The direction is clear: simpler mental models, better defaults, and more performance out of the box. If you're starting a new project in 2026, Next.js 16 is the way to go.
