@@ -1,20 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  Github,
-  Linkedin,
-  Twitter,
-  ArrowUpRight,
-  Download,
-  MapPin,
-} from "lucide-react";
+import { Github, Linkedin, ArrowUpRight, Download, MapPin } from "lucide-react";
 import { socialLinks, siteConfig } from "@/lib/constants";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  github: Github,
   linkedin: Linkedin,
-  twitter: Twitter,
+  github: Github,
 };
 
 const item = {
@@ -147,7 +139,7 @@ export function Contact() {
             repeat: Infinity,
             ease: "easeInOut" as const,
           }}
-          className="absolute left-[30%] top-[20%] h-[350px] w-[350px] rounded-full bg-accent/[0.04] blur-[120px]"
+          className="absolute left-[30%] top-[20%] h-[350px] w-[350px] rounded-full bg-accent/4 blur-[120px]"
         />
         <motion.div
           animate={{
@@ -160,7 +152,7 @@ export function Contact() {
             repeat: Infinity,
             ease: "easeInOut" as const,
           }}
-          className="absolute right-[25%] bottom-[15%] h-[300px] w-[300px] rounded-full bg-accent-secondary/[0.03] blur-[120px]"
+          className="absolute right-[25%] bottom-[15%] h-[300px] w-[300px] rounded-full bg-accent-secondary/3 blur-[120px]"
         />
       </div>
 
@@ -218,7 +210,7 @@ export function Contact() {
               className="mt-4 font-heading text-4xl font-bold tracking-tight sm:text-5xl lg:text-7xl"
             >
               Let&apos;s{" "}
-              <span className="bg-gradient-to-r from-accent to-accent-secondary bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-accent to-accent-secondary bg-clip-text text-transparent">
                 talk.
               </span>
             </motion.h1>
@@ -281,7 +273,7 @@ export function Contact() {
               <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-muted">
                 Find me on
               </p>
-              <div className="grid grid-cols-3 gap-3">
+              <div className="grid grid-cols-2 gap-3">
                 {socialLinks.map((link) => {
                   const Icon = iconMap[link.icon];
                   return (
@@ -292,7 +284,7 @@ export function Contact() {
                       rel="noopener noreferrer"
                       whileHover={{ y: -3 }}
                       transition={{ duration: 0.3 }}
-                      className="group flex flex-col items-center gap-2 rounded-2xl border border-border/30 bg-card py-4 transition-all duration-300 hover:border-accent/20 hover:bg-accent/[0.06]"
+                      className="group flex flex-col items-center gap-2 rounded-2xl border border-border/30 bg-card py-4 transition-all duration-300 hover:border-accent/20 hover:bg-accent/6"
                     >
                       {Icon && (
                         <Icon className="h-5 w-5 text-muted transition-colors group-hover:text-accent" />

@@ -247,11 +247,11 @@ export function Hero() {
   }, []);
 
   return (
-    <section className="relative h-[100dvh] overflow-hidden">
+    <section className="relative h-dvh overflow-hidden">
       <div className="absolute inset-0 motion-safe:block motion-reduce:hidden opacity-30">
         <Scene />
       </div>
-      <div className="absolute inset-0 bg-gradient-to-t from-bg via-bg/60 to-bg/20" />
+      <div className="absolute inset-0 bg-linear-to-t from-bg via-bg/60 to-bg/20" />
 
       {/* Floating illustrated elements — show fewer on mobile */}
       <div className="pointer-events-none absolute inset-0">
@@ -300,7 +300,7 @@ export function Hero() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.4, delay: 0.2 }}
-          className="mb-5 sm:mb-8 flex items-center gap-2 rounded-full border border-accent/20 bg-accent/[0.08] px-4 py-1.5"
+          className="mb-5 sm:mb-8 flex items-center gap-2 rounded-full border border-accent/20 bg-accent/8 px-4 py-1.5"
         >
           <span className="relative flex h-2 w-2">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
@@ -329,7 +329,7 @@ export function Hero() {
           className="mt-3 max-w-3xl font-heading text-3xl font-bold leading-snug tracking-tight sm:text-5xl lg:text-6xl"
         >
           I turn ideas into{" "}
-          <span className="bg-gradient-to-r from-accent to-accent-secondary bg-clip-text text-transparent">
+          <span className="bg-linear-to-r from-accent to-accent-secondary bg-clip-text text-transparent">
             products
           </span>
           <br />
