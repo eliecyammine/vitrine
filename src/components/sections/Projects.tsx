@@ -176,7 +176,7 @@ export function ProjectsGrid() {
   return (
     <div className="relative overflow-hidden py-24 pt-32">
       {/* Background: dot grid */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden opacity-[0.03]">
+      <div className="pointer-events-none absolute inset-0 overflow-hidden opacity-[0.03]" aria-hidden="true">
         <svg width="100%" height="100%">
           <defs>
             <pattern
@@ -195,7 +195,7 @@ export function ProjectsGrid() {
       </div>
 
       {/* Floating illustrated shapes — first 2 visible on mobile */}
-      <div className="pointer-events-none absolute inset-0">
+      <div className="pointer-events-none absolute inset-0" aria-hidden="true">
         {floatingShapes.map((shape, i) => (
           <motion.div
             key={i}

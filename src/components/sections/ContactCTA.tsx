@@ -8,13 +8,13 @@ export function ContactCTA() {
   return (
     <section className="relative overflow-hidden py-32">
       {/* Background: diagonal gradient streak */}
-      <div className="pointer-events-none absolute inset-0">
+      <div className="pointer-events-none absolute inset-0" aria-hidden="true">
         <motion.div
           initial={{ opacity: 0, x: "-30%", rotate: -12 }}
           whileInView={{ opacity: 1, x: "0%", rotate: -12 }}
           viewport={{ once: true }}
           transition={{ duration: 1.5, ease: "easeOut" as const }}
-          className="absolute left-[-10%] top-[20%] h-[200px] w-[120%] bg-gradient-to-r from-transparent via-accent/[0.03] to-transparent blur-[60px]"
+          className="absolute left-[-10%] top-[20%] h-[200px] w-[120%] bg-linear-to-r from-transparent via-accent/3 to-transparent blur-[60px]"
         />
       </div>
 
@@ -30,13 +30,13 @@ export function ContactCTA() {
           </p>
           <h2 className="mt-4 font-heading text-5xl font-bold sm:text-6xl lg:text-7xl">
             Got a{" "}
-            <span className="bg-gradient-to-r from-accent to-accent-secondary bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-accent to-accent-secondary bg-clip-text text-transparent">
               project?
             </span>
           </h2>
           <p className="mx-auto mt-6 max-w-md text-lg text-muted">
-            I&apos;m always open to new opportunities, collaborations, or just
-            a good conversation about product and design.
+            I&apos;m always open to new opportunities, collaborations, or just a
+            good conversation about product and design.
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button href="mailto:eliecyammine@gmail.com" external>

@@ -127,7 +127,7 @@ export function Contact() {
   return (
     <div className="relative flex min-h-[calc(100dvh-4rem-4.5rem)] items-center justify-center overflow-hidden py-8">
       {/* Background: drifting aurora blobs */}
-      <div className="pointer-events-none absolute inset-0">
+      <div className="pointer-events-none absolute inset-0" aria-hidden="true">
         <motion.div
           animate={{
             x: [0, 30, -20, 0],
@@ -157,7 +157,7 @@ export function Contact() {
       </div>
 
       {/* Floating illustrated shapes — first 2 visible on mobile */}
-      <div className="pointer-events-none absolute inset-0">
+      <div className="pointer-events-none absolute inset-0" aria-hidden="true">
         {floatingShapes.map((shape, i) => (
           <motion.div
             key={i}

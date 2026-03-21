@@ -5,7 +5,16 @@ import { Moon, Sun } from "lucide-react";
 import { useTheme } from "@/lib/theme";
 
 export function ThemeToggle() {
-  const { theme, toggleTheme } = useTheme();
+  const { theme, mounted, toggleTheme } = useTheme();
+
+  // Render a static placeholder until mounted to avoid hydration mismatch
+  if (!mounted) {
+    return (
+      <div className="relative flex h-9 w-9 items-center justify-center rounded-xl bg-secondary/50">
+        <Sun className="h-4 w-4" />
+      </div>
+    );
+  }
 
   return (
     <motion.button

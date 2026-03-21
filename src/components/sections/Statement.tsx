@@ -29,8 +29,7 @@ export function Statement() {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] as const }}
           className="font-heading text-4xl leading-tight sm:text-6xl lg:text-7xl"
         >
-          I build things{" "}
-          <br className="sm:hidden" />
+          I build things <br className="sm:hidden" />
           that are{" "}
           <span className="relative inline-block min-w-[4ch] text-left sm:min-w-[5ch]">
             <AnimatePresence mode="wait">
@@ -39,8 +38,11 @@ export function Statement() {
                 initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
                 animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 exit={{ opacity: 0, y: -30, filter: "blur(8px)" }}
-                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] as const }}
-                className="inline-block bg-gradient-to-r from-accent to-accent-secondary bg-clip-text text-transparent"
+                transition={{
+                  duration: 0.5,
+                  ease: [0.22, 1, 0.36, 1] as const,
+                }}
+                className="inline-block bg-linear-to-r from-accent to-accent-secondary bg-clip-text text-transparent"
               >
                 {words[index]}
               </motion.span>

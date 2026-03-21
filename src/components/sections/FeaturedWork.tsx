@@ -67,7 +67,11 @@ export function FeaturedWork() {
                 Things I&apos;ve built
               </motion.h2>
             </div>
-            <Button href="/projects" variant="secondary" className="hidden sm:inline-flex">
+            <Button
+              href="/projects"
+              variant="secondary"
+              className="hidden sm:inline-flex"
+            >
               All projects
               <ArrowRight className="h-4 w-4" />
             </Button>
@@ -90,11 +94,15 @@ export function FeaturedWork() {
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.1, duration: 0.6, ease: [0.22, 1, 0.36, 1] as const }}
+                  transition={{
+                    delay: i * 0.1,
+                    duration: 0.6,
+                    ease: [0.22, 1, 0.36, 1] as const,
+                  }}
                   className="relative flex h-[60vh] w-[75vw] max-w-3xl flex-col justify-between overflow-hidden rounded-3xl border border-border/40 bg-card p-8 transition-colors duration-500 hover:border-accent/30 sm:w-[60vw] sm:p-12"
                 >
                   {/* Background number */}
-                  <span className="absolute -right-4 -top-8 font-heading text-[12rem] leading-none text-text/[0.02] sm:text-[16rem]">
+                  <span className="absolute -right-4 -top-8 font-heading text-[12rem] leading-none text-text/2 sm:text-[16rem]">
                     {project.number}
                   </span>
 

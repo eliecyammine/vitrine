@@ -254,7 +254,7 @@ export function Hero() {
       <div className="absolute inset-0 bg-linear-to-t from-bg via-bg/60 to-bg/20" />
 
       {/* Floating illustrated elements — show fewer on mobile */}
-      <div className="pointer-events-none absolute inset-0">
+      <div className="pointer-events-none absolute inset-0" aria-hidden="true">
         {floatingElements.map((el, i) => (
           <motion.div
             key={i}
