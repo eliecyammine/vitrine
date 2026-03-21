@@ -125,7 +125,7 @@ const floatingShapes = [
 
 export function Contact() {
   return (
-    <div className="relative flex min-h-[calc(100dvh-4rem-4.5rem)] items-center justify-center overflow-hidden py-8">
+    <div className="relative flex min-h-[calc(100dvh-4rem-4.5rem)] items-center justify-center overflow-hidden py-24 pt-32">
       {/* Background: drifting aurora blobs */}
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
         <motion.div
