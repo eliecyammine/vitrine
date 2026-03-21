@@ -29,6 +29,11 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   metadataBase: new URL(siteConfig.url),
+  robots: { index: true, follow: true },
+  icons: {
+    icon: "/profile.png",
+    apple: "/profile.png",
+  },
   openGraph: {
     title: siteConfig.title,
     description: siteConfig.description,
@@ -36,20 +41,25 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     locale: "en_US",
     type: "website",
+    images: [{ url: siteConfig.ogImage }],
   },
   twitter: {
     card: "summary_large_image",
     title: siteConfig.title,
     description: siteConfig.description,
+    images: [siteConfig.ogImage],
   },
-  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${sora.variable} ${inter.variable} dark`}>
+    <html
+      lang="en"
+      className={`${sora.variable} ${inter.variable} dark`}
+      suppressHydrationWarning
+    >
       <head>
         <script
           dangerouslySetInnerHTML={{
