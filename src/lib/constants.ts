@@ -8,7 +8,7 @@ export const siteConfig = {
   url: "https://elieyammine.com",
   ogImage: "/og.png",
   email: "eliecyammine@gmail.com",
-  location: "Keserwan, Lebanon",
+  location: "Jbeil, Lebanon",
   resumeUrl: "/resume.pdf",
 };
 
@@ -21,19 +21,14 @@ export const navLinks: NavLink[] = [
 
 export const socialLinks: SocialLink[] = [
   {
-    label: "GitHub",
-    href: "https://github.com/elieyammine",
-    icon: "github",
-  },
-  {
     label: "LinkedIn",
     href: "https://linkedin.com/in/elieyammine",
     icon: "linkedin",
   },
   {
-    label: "Twitter",
-    href: "https://twitter.com/elieyammine",
-    icon: "twitter",
+    label: "GitHub",
+    href: "https://github.com/eliecyammine",
+    icon: "github",
   },
 ];
 

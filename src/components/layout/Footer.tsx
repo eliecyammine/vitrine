@@ -1,14 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { Github, Linkedin } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { socialLinks, siteConfig } from "@/lib/constants";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  github: Github,
   linkedin: Linkedin,
-  twitter: Twitter,
+  github: Github,
 };
 
 export function Footer() {
