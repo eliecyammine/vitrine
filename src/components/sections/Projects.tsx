@@ -8,6 +8,15 @@ import type { Project } from "@/types";
 
 const projects: Project[] = [
   {
+    slug: "edelweiss",
+    title: "Edelweiss Maritime",
+    description:
+      "A self-initiated, production-grade concept reimagining the digital presence of a luxury superyacht charter & management company — cinematic 3D and motion, a headless CMS, and full bilingual (EN/AR) RTL support.",
+    tags: ["Next.js 16", "Payload CMS", "Three.js", "GSAP", "RTL i18n"],
+    liveUrl: "https://edelweiss-dev.elieyammine.com",
+    featured: true,
+  },
+  {
     slug: "vitrine",
     title: "Vitrine",
     description:

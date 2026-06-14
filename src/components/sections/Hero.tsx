@@ -355,7 +355,7 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 1 }}
           className="mx-auto mt-4 sm:mt-6 max-w-lg text-base sm:text-lg leading-relaxed text-muted"
         >
-          Product strategy, design, and code — all in one person.
+          Product Strategy, Design, and Code.
           <br className="hidden sm:block" />
           6+ years shipping web &amp; mobile products end to end.
         </motion.p>
