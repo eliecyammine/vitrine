@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { skills } from "@/lib/constants";
+import { skills, languages } from "@/lib/constants";
 
 const item = {
   hidden: { opacity: 0, y: 20 },
@@ -210,9 +210,6 @@ export function About() {
               <br />
               Code.
             </h1>
-            <p className="mx-auto mt-6 max-w-md text-xl text-muted">
-              Most teams need three people. I&apos;m all three.
-            </p>
           </motion.div>
 
           {/* Bio */}
@@ -222,16 +219,12 @@ export function About() {
           >
             <div className="space-y-4 text-base leading-relaxed text-muted sm:text-lg">
               <p>
-                I own strategy, design interfaces in Figma, and ship production
-                code in React, Node.js, and Flutter. The full loop, one person,
-                no handoff friction.
-              </p>
-              <p>
-                Currently leading product and UX for a fintech platform at Mojo
-                Verse — working with Central Bank compliance, third-party
-                integrations, and cross-functional delivery. Previously shipped
-                web apps for international clients at EndSpace Mena and ran my
-                own freelance practice since 2019.
+                Building digital products from concept to launch, combining
+                product strategy, UX design, and full-stack development.
+                Experienced in fintech, regulatory-driven platforms, third-party
+                integrations, and scalable web and mobile applications, with a
+                track record of delivering solutions for both organizations and
+                independent clients since 2019.
               </p>
             </div>
           </motion.div>
@@ -298,6 +291,26 @@ export function About() {
                   </span>
                 ))}
               </div>
+            </div>
+          </motion.div>
+
+          {/* Languages — spoken */}
+          <motion.div variants={item} className="mt-16">
+            <p className="mb-6 text-center text-xs font-medium uppercase tracking-[0.3em] text-muted">
+              Languages I speak
+            </p>
+            <div className="flex flex-wrap justify-center gap-3">
+              {languages.map((lang) => (
+                <div
+                  key={lang.name}
+                  className="flex items-center gap-2 rounded-full border border-border/30 bg-card/50 px-4 py-2 backdrop-blur-sm transition-colors hover:border-accent/20"
+                >
+                  <span className="text-sm font-medium text-text">
+                    {lang.name}
+                  </span>
+                  <span className="text-xs text-muted">{lang.level}</span>
+                </div>
+              ))}
             </div>
           </motion.div>
         </motion.div>

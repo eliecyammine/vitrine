@@ -298,21 +298,24 @@ export function Contact() {
               </div>
             </motion.div>
 
-            {/* Resume — disabled */}
+            {/* Resume — download */}
             <motion.div variants={item}>
-              <div
-                aria-disabled="true"
-                className="flex items-center justify-between rounded-2xl border border-border/20 bg-card/50 px-5 py-4 opacity-40 cursor-not-allowed select-none"
+              <motion.a
+                href={siteConfig.resumeUrl}
+                download={siteConfig.resumeFileName}
+                whileHover={{ y: -3 }}
+                transition={{ duration: 0.3 }}
+                className="group flex items-center justify-between rounded-2xl border border-border/30 bg-card px-5 py-4 transition-all duration-300 hover:border-accent/20 hover:bg-accent/6"
               >
                 <div className="flex items-center gap-3">
-                  <Download className="h-4 w-4 text-muted" />
+                  <Download className="h-4 w-4 text-muted transition-colors group-hover:text-accent" />
                   <div>
                     <p className="text-sm font-medium text-text">Resume</p>
-                    <p className="text-xs text-muted">Coming soon</p>
+                    <p className="text-xs text-muted">Download PDF</p>
                   </div>
                 </div>
-                <ArrowUpRight className="h-4 w-4 text-muted" />
-              </div>
+                <ArrowUpRight className="h-4 w-4 text-muted transition-colors group-hover:text-accent" />
+              </motion.a>
             </motion.div>
 
             {/* Location */}

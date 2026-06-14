@@ -1,4 +1,10 @@
-import type { NavLink, SocialLink, ExperienceItem } from "@/types";
+import type {
+  NavLink,
+  SocialLink,
+  ExperienceItem,
+  EducationItem,
+  Language,
+} from "@/types";
 
 export const siteConfig = {
   name: "Elie Yammine",
@@ -9,7 +15,8 @@ export const siteConfig = {
   ogImage: "/og.png",
   email: "eliecyammine@gmail.com",
   location: "Jbeil, Lebanon",
-  resumeUrl: "/resume.pdf",
+  resumeUrl: "/elie-yammine-resume.pdf",
+  resumeFileName: "Elie Yammine - Resume.pdf",
 };
 
 export const navLinks: NavLink[] = [
@@ -54,8 +61,8 @@ export const experience: ExperienceItem[] = [
     company: "Remote",
     period: "2019 — Present",
     description:
-      "Architecting and delivering end-to-end web and mobile applications for diverse clients — from database design to cloud deployment using React, Next.js, Node.js, Nest.js, Flutter, and PostgreSQL.",
-    tags: ["React", "Next.js", "Node.js", "Flutter", "PostgreSQL"],
+      "Architecting and delivering end-to-end web and mobile applications for diverse clients — from database design to cloud deployment using React, Next.js, Node.js, Nest.js, Expo, and PostgreSQL.",
+    tags: ["React", "Next.js", "Node.js", "Expo", "PostgreSQL"],
   },
   {
     role: "Software & DevOps Engineer",
@@ -73,6 +80,20 @@ export const experience: ExperienceItem[] = [
       "Created graphics, logos, and UI/UX designs using Adobe Illustrator and Figma. Built responsive front-end prototypes for handoff to development teams.",
     tags: ["Figma", "Adobe Illustrator", "UI/UX", "HTML/CSS"],
   },
+];
+
+export const education: EducationItem[] = [
+  {
+    degree: "Bachelor's Degree in Computer Science",
+    school: "AUL — Arts, Sciences and Technology University in Lebanon",
+    period: "2016 — 2020",
+  },
+];
+
+export const languages: Language[] = [
+  { name: "English", level: "Fluent" },
+  { name: "Arabic", level: "Fluent" },
+  { name: "French", level: "Intermediate" },
 ];
 
 export const skills = [

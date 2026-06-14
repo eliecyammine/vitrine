@@ -1,8 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { GraduationCap } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
-import { experience } from "@/lib/constants";
+import { experience, education } from "@/lib/constants";
 
 /* Role-specific mini illustrations */
 const roleIllustrations: Record<string, React.ReactNode> = {
@@ -411,6 +412,54 @@ export function Experience() {
             })}
           </div>
         </div>
+
+        {/* Education */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: 0.6, ease: "easeOut" as const }}
+          className="mt-20"
+        >
+          <p className="text-center text-xs font-medium uppercase tracking-[0.3em] text-accent">
+            Education
+          </p>
+          <div className="mt-6 space-y-4">
+            {education.map((edu) => (
+              <div
+                key={edu.degree}
+                className="group relative overflow-hidden rounded-2xl border border-border/30 bg-card p-6 transition-all duration-300 hover:border-accent/20"
+              >
+                <div className="flex items-start gap-4">
+                  <motion.div
+                    animate={{ y: [0, -3, 0] }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "easeInOut" as const,
+                    }}
+                    className="mt-0.5 flex shrink-0 items-center justify-center rounded-xl border border-accent/15 bg-accent/6 p-2"
+                  >
+                    <GraduationCap
+                      className="h-7 w-7 text-accent/70"
+                      strokeWidth={1.5}
+                    />
+                  </motion.div>
+                  <div className="flex-1">
+                    <span className="text-xs font-medium text-accent">
+                      {edu.period}
+                    </span>
+                    <h3 className="mt-1 text-lg font-semibold text-text">
+                      {edu.degree}
+                    </h3>
+                    <p className="text-sm text-muted">{edu.school}</p>
+                  </div>
+                </div>
+                <div className="absolute bottom-0 left-0 h-px w-full bg-linear-to-r from-transparent via-accent/0 to-transparent transition-all duration-500 group-hover:via-accent/30" />
+              </div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </div>
   );

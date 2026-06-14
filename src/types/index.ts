@@ -36,3 +36,14 @@ export interface ExperienceItem {
   description: string;
   tags: string[];
 }
+
+export interface EducationItem {
+  degree: string;
+  school: string;
+  period: string;
+}
+
+export interface Language {
+  name: string;
+  level: string;
+}
