@@ -5,9 +5,12 @@ import Lenis from "lenis";
 
 export function SmoothScroll() {
   useEffect(() => {
+    // `lerp` tracks input far more tightly than a long `duration` ease-out,
+    // which felt laggy. Higher = snappier; 0.12 stays smooth but responsive.
     const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      lerp: 0.12,
+      wheelMultiplier: 1,
+      touchMultiplier: 1.6,
     });
 
     function raf(time: number) {

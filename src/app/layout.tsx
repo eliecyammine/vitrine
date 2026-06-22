@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Sora, Inter } from "next/font/google";
-import { ThemeProvider } from "@/lib/theme";
 import { siteConfig } from "@/lib/constants";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { MotionProvider } from "@/components/layout/MotionProvider";
 
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
@@ -41,13 +41,11 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     locale: "en_US",
     type: "website",
-    images: [{ url: siteConfig.ogImage }],
   },
   twitter: {
     card: "summary_large_image",
     title: siteConfig.title,
     description: siteConfig.description,
-    images: [siteConfig.ogImage],
   },
 };
 
@@ -68,7 +66,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen flex flex-col font-body antialiased">
-        <ThemeProvider>
+        <MotionProvider>
           <SmoothScroll />
 
           <a
@@ -82,7 +80,7 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
-        </ThemeProvider>
+        </MotionProvider>
 
         <SpeedInsights />
       </body>

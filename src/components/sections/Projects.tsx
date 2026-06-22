@@ -66,7 +66,7 @@ const floatingShapes = [
           d="M17 4c0 0-8 10-8 20 0 3 3.6 6 8 6s8-3 8-6c0-10-8-20-8-20z"
           stroke="var(--accent-color)"
           strokeWidth="1.5"
-          opacity="0.3"
+          opacity="0.45"
         />
         <circle
           cx="17"
@@ -74,7 +74,7 @@ const floatingShapes = [
           r="3"
           stroke="var(--accent-secondary)"
           strokeWidth="1"
-          opacity="0.25"
+          opacity="0.35"
         />
       </svg>
     ),
@@ -94,7 +94,7 @@ const floatingShapes = [
           r="5"
           stroke="var(--accent-color)"
           strokeWidth="1.5"
-          opacity="0.3"
+          opacity="0.45"
         />
         <circle
           cx="14"
@@ -103,7 +103,7 @@ const floatingShapes = [
           stroke="var(--accent-color)"
           strokeWidth="1"
           strokeDasharray="4 3"
-          opacity="0.2"
+          opacity="0.3"
         />
       </svg>
     ),
@@ -122,14 +122,14 @@ const floatingShapes = [
           stroke="var(--accent-secondary)"
           strokeWidth="1.5"
           strokeLinecap="round"
-          opacity="0.3"
+          opacity="0.45"
         />
         <path
           d="M6 24c1-2 3-4 4-4"
           stroke="var(--accent-secondary)"
           strokeWidth="1.5"
           strokeLinecap="round"
-          opacity="0.25"
+          opacity="0.35"
         />
       </svg>
     ),
@@ -151,7 +151,7 @@ const floatingShapes = [
           rx="2"
           stroke="var(--accent-color)"
           strokeWidth="1.5"
-          opacity="0.25"
+          opacity="0.4"
         />
         <line
           x1="3"
@@ -160,21 +160,21 @@ const floatingShapes = [
           y2="9"
           stroke="var(--accent-color)"
           strokeWidth="1"
-          opacity="0.2"
+          opacity="0.3"
         />
         <circle
           cx="6"
           cy="7"
           r="0.8"
           fill="var(--accent-secondary)"
-          opacity="0.3"
+          opacity="0.45"
         />
         <circle
           cx="9"
           cy="7"
           r="0.8"
           fill="var(--accent-secondary)"
-          opacity="0.3"
+          opacity="0.45"
         />
       </svg>
     ),

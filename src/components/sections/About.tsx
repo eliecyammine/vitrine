@@ -137,21 +137,21 @@ export function About() {
               delay: 0.3 + i * 0.2,
               ease: "easeOut" as const,
             }}
-            className="absolute rounded-full border border-accent/6"
+            className="absolute rounded-full border border-accent/10"
             style={{ width: size, height: size }}
           />
         ))}
         <motion.div
           animate={{
             scale: [1, 1.08, 1],
-            opacity: [0.04, 0.08, 0.04],
+            opacity: [0.05, 0.09, 0.05],
           }}
           transition={{
             duration: 6,
             repeat: Infinity,
             ease: "easeInOut" as const,
           }}
-          className="absolute h-[500px] w-[500px] rounded-full bg-accent/3 blur-[100px]"
+          className="absolute h-[500px] w-[500px] rounded-full bg-accent/4 blur-[100px]"
         />
       </div>
 

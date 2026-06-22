@@ -249,7 +249,7 @@ export function Contact() {
                 href={`mailto:${siteConfig.email}`}
                 whileHover={{ y: -3 }}
                 transition={{ duration: 0.3 }}
-                className="group relative block overflow-hidden rounded-2xl border border-accent/20 bg-linear-to-br from-accent/8 to-transparent p-6 transition-all duration-300 hover:border-accent/40 hover:shadow-[0_0_30px_rgba(16,185,129,0.08)]"
+                className="group relative block overflow-hidden rounded-2xl border border-accent/20 bg-linear-to-br from-accent/8 to-transparent p-6 transition-all duration-300 hover:border-accent/40 hover:shadow-[0_0_30px_color-mix(in_srgb,var(--accent-color)_12%,transparent)]"
               >
                 <div className="flex items-center justify-between">
                   <div>

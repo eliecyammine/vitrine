@@ -12,7 +12,6 @@ export const siteConfig = {
   description:
     "Full-stack developer and product owner turning ideas into polished web and mobile products. 6+ years shipping across fintech, SaaS, and e-commerce.",
   url: "https://elieyammine.com",
-  ogImage: "/og.png",
   email: "eliecyammine@gmail.com",
   location: "Jbeil, Lebanon",
   resumeUrl: "/elie-yammine-resume.pdf",
