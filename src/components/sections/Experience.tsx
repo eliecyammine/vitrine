@@ -172,8 +172,8 @@ const bgShapes = [
         cy="9"
         r="7"
         stroke="var(--accent-color)"
-        strokeWidth="1"
-        opacity="0.12"
+        strokeWidth="1.25"
+        opacity="0.25"
       />
     ),
   },
@@ -191,8 +191,8 @@ const bgShapes = [
         height="10"
         rx="2"
         stroke="var(--accent-secondary)"
-        strokeWidth="1"
-        opacity="0.1"
+        strokeWidth="1.25"
+        opacity="0.22"
         transform="rotate(45 7 7)"
       />
     ),
@@ -207,8 +207,8 @@ const bgShapes = [
       <path
         d="M6 1L11 11H1L6 1Z"
         stroke="var(--accent-color)"
-        strokeWidth="1"
-        opacity="0.1"
+        strokeWidth="1.25"
+        opacity="0.22"
       />
     ),
   },
@@ -224,8 +224,8 @@ const bgShapes = [
         cy="8"
         r="6"
         stroke="var(--accent-secondary)"
-        strokeWidth="1"
-        opacity="0.1"
+        strokeWidth="1.25"
+        opacity="0.22"
       />
     ),
   },
@@ -243,8 +243,8 @@ const bgShapes = [
         height="8"
         rx="1"
         stroke="var(--accent-color)"
-        strokeWidth="1"
-        opacity="0.08"
+        strokeWidth="1.25"
+        opacity="0.2"
       />
     ),
   },
@@ -356,7 +356,7 @@ export function Experience() {
                       }}
                       className="absolute h-6 w-6 rounded-full border border-accent/30"
                     />
-                    <div className="relative z-10 flex h-5 w-5 items-center justify-center rounded-full border-2 border-accent/40 bg-bg transition-all duration-300 group-hover:border-accent group-hover:shadow-[0_0_12px_rgba(16,185,129,0.3)]">
+                    <div className="relative z-10 flex h-5 w-5 items-center justify-center rounded-full border-2 border-accent/40 bg-bg transition-all duration-300 group-hover:border-accent group-hover:shadow-[0_0_12px_color-mix(in_srgb,var(--accent-color)_30%,transparent)]">
                       <div className="h-2 w-2 rounded-full bg-accent" />
                     </div>
                   </div>

@@ -80,7 +80,7 @@ export default async function ProjectPage({
         </div>
       </header>
 
-      <article className="prose mt-12">
+      <article className="mt-12">
         <Content />
       </article>
     </div>

@@ -3,16 +3,52 @@
 import { useRef, useMemo } from "react";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
+import { useTheme } from "@/lib/theme";
 
-function MorphBlob() {
+type Theme = "light" | "dark";
+
+/* Per-theme palette. Light mode needs a darker green and higher opacity to
+   stay visible on the near-white background; dark mode stays subtle. */
+const PALETTE: Record<
+  Theme,
+  {
+    primary: string;
+    secondary: string;
+    wireframeOpacity: number;
+    glowOpacity: number;
+    particleOpacity: number;
+    ambient: number;
+    point1: number;
+    point2: number;
+  }
+> = {
+  dark: {
+    primary: "#10B981",
+    secondary: "#34D399",
+    wireframeOpacity: 0.22,
+    glowOpacity: 0.018,
+    particleOpacity: 0.45,
+    ambient: 0.45,
+    point1: 0.55,
+    point2: 0.32,
+  },
+  light: {
+    primary: "#059669",
+    secondary: "#10B981",
+    wireframeOpacity: 0.09,
+    glowOpacity: 0.018,
+    particleOpacity: 0.24,
+    ambient: 0.65,
+    point1: 0.5,
+    point2: 0.28,
+  },
+};
+
+function MorphBlob({ color, opacity }: { color: string; opacity: number }) {
   const mesh = useRef<THREE.Mesh>(null!);
   const geo = useRef<THREE.IcosahedronGeometry>(null!);
   const originalPositions = useRef<Float32Array | null>(null);
   const elapsed = useRef(0);
-
-  useMemo(() => {
-    // Store original positions after first render
-  }, []);
 
   useFrame((state, delta) => {
     if (!geo.current) return;
@@ -60,16 +96,16 @@ function MorphBlob() {
     <mesh ref={mesh} scale={2.2}>
       <icosahedronGeometry ref={geo} args={[1, 48]} />
       <meshStandardMaterial
-        color="#10B981"
+        color={color}
         wireframe
         transparent
-        opacity={0.07}
+        opacity={opacity}
       />
     </mesh>
   );
 }
 
-function GlowSphere() {
+function GlowSphere({ color, opacity }: { color: string; opacity: number }) {
   const mesh = useRef<THREE.Mesh>(null!);
   const elapsed = useRef(0);
 
@@ -84,7 +120,7 @@ function GlowSphere() {
   return (
     <mesh ref={mesh}>
       <sphereGeometry args={[1, 32, 32]} />
-      <meshBasicMaterial color="#10B981" transparent opacity={0.012} />
+      <meshBasicMaterial color={color} transparent opacity={opacity} />
     </mesh>
   );
 }
@@ -104,7 +140,15 @@ function generateParticlePositions(count: number) {
 
 const DEFAULT_PARTICLE_POSITIONS = generateParticlePositions(200);
 
-function Particles({ count = 200 }: { count?: number }) {
+function Particles({
+  color,
+  opacity,
+  count = 200,
+}: {
+  color: string;
+  opacity: number;
+  count?: number;
+}) {
   const ref = useRef<THREE.Points>(null!);
   const elapsed = useRef(0);
 
@@ -126,20 +170,33 @@ function Particles({ count = 200 }: { count?: number }) {
       <bufferGeometry>
         <bufferAttribute attach="attributes-position" args={[positions, 3]} />
       </bufferGeometry>
-      <pointsMaterial size={0.015} color="#10B981" transparent opacity={0.3} sizeAttenuation />
+      <pointsMaterial
+        size={0.015}
+        color={color}
+        transparent
+        opacity={opacity}
+        sizeAttenuation
+      />
     </points>
   );
 }
 
 export function FloatingShapes() {
+  const { theme } = useTheme();
+  const p = PALETTE[theme];
+
   return (
     <>
-      <ambientLight intensity={0.2} />
-      <pointLight position={[5, 5, 5]} intensity={0.3} color="#10B981" />
-      <pointLight position={[-5, -5, -5]} intensity={0.15} color="#34D399" />
-      <MorphBlob />
-      <GlowSphere />
-      <Particles />
+      <ambientLight intensity={p.ambient} />
+      <pointLight position={[5, 5, 5]} intensity={p.point1} color={p.primary} />
+      <pointLight
+        position={[-5, -5, -5]}
+        intensity={p.point2}
+        color={p.secondary}
+      />
+      <MorphBlob color={p.primary} opacity={p.wireframeOpacity} />
+      <GlowSphere color={p.primary} opacity={p.glowOpacity} />
+      <Particles color={p.primary} opacity={p.particleOpacity} />
     </>
   );
 }

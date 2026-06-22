@@ -248,7 +248,7 @@ export function Hero() {
 
   return (
     <section className="relative h-dvh overflow-hidden">
-      <div className="absolute inset-0 motion-safe:block motion-reduce:hidden opacity-30">
+      <div className="hero-scene absolute inset-0 motion-safe:block motion-reduce:hidden">
         <Scene />
       </div>
       <div className="absolute inset-0 bg-linear-to-t from-bg via-bg/60 to-bg/20" />
@@ -355,7 +355,7 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 1 }}
           className="mx-auto mt-4 sm:mt-6 max-w-lg text-base sm:text-lg leading-relaxed text-muted"
         >
-          Product Strategy, Design, and Code.
+          Product Strategy, Design, and Code.{" "}
           <br className="hidden sm:block" />
           6+ years shipping web &amp; mobile products end to end.
         </motion.p>
